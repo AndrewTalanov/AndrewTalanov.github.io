@@ -78,6 +78,11 @@ button{
 .order-2{
     order: 1;
 }
+.d-flex{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
 
 
 /* navigation menu */
@@ -220,15 +225,6 @@ button{
     margin-bottom: 75%;
 }
 
-/* d-flex */
-.d-flex{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-
-/* first row */
 
 /* laptop first row */
 @media (max-width: 1024px) {
@@ -268,6 +264,7 @@ button{
     }
     .btn__free__consultation{
         margin-top: 35px;
+        align-self: center;
     }
 }
 
