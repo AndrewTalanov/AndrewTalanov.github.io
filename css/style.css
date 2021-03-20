@@ -1,0 +1,115 @@
+/* fonts */
+@font-face{
+    font-family: "sf ui display";
+    src: url(../assets/fonts/sf-ui-display-black-58646a6b80d5a.otf);
+    src: url(../assets/fonts/sf-ui-display-bold-58646a511e3d9.otf);
+    src: url(../assets/fonts/sf-ui-display-heavy-586470160b9e5.otf);
+    src: url(../assets/fonts/sf-ui-display-light-58646b33e0551.otf);
+    src: url(../assets/fonts/sf-ui-display-medium-58646be638f96.otf);
+    src: url(../assets/fonts/sf-ui-display-semibold-58646eddcae92.otf);
+    src: url(../assets/fonts/sf-ui-display-thin-58646e9b26e8b.otf);
+    src: url(../assets/fonts/sf-ui-display-ultralight-58646b19bf205.otf);
+}
+
+/* all  */
+*{
+    font-family: "sf ui display";
+    margin: 0;
+    padding: 0;
+}
+a{
+    color: #585858;
+    text-decoration: none;
+}
+
+/* navigation menu */
+.nav__menu{
+    display: flex;
+    justify-content: space-between;
+    width: 93%;
+    /* 1359px/1440 */
+    margin: auto;
+    height: 100px;
+    align-items: center;
+    font-weight: 400;
+}
+.nav__item__col{
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* left part nav menu */
+.nav__item__col__left{
+    width: 43%; 
+    /* 581px/1440 */
+}
+.nav__menu ul{
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+    width: 79%;
+    /* 459px/581 */
+}
+
+/* right part nav menu */
+.nav__item__col__right{
+    width: 18%;
+    /* 248px/1359 */
+}
+.btn__sing__up{
+    background-color: #FD665E;
+    color: white;
+    width: 100px;
+    height: 48px;
+    border: none;
+    border-radius: 5px;
+    font-weight: 600;
+    outline: none;
+}
+.btn__brg__menu{
+    display: none;
+}
+
+/* laptop nav menu */
+@media (max-width: 1024px) {
+    .nav__item__col__left{
+        width: 50%;
+    }
+    .nav__item__col__right{
+        width: 25%;
+    }
+}
+@media (max-width: 900px) {
+    .nav__item__col__left{
+        width: 70%;
+    }
+}
+
+/* tablet nav menu */
+@media (max-width: 768px) {
+    .nav__item__col__left{
+        width: 65%;
+    }
+    .nav__item__col__right{
+        display: none;
+    }
+    .btn__brg__menu{
+        display: block;
+        width: 25px;
+    }
+}
+@media (max-width: 680px) {
+    .nav__item__col__left{
+        width: 90%;
+    }
+}
+
+/* mobile L nav menu */
+@media (max-width: 426px) {
+    .nav__menu ul{
+        display: none;
+    }
+}
+
+
