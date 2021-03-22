@@ -83,6 +83,12 @@ button{
     flex-direction: column;
     justify-content: space-between;
 }
+h2{
+    font-family: "New York Extra";
+    font-size: 48px;
+    letter-spacing: -0.04em;
+    margin: 0;
+}
 
 
 /* navigation menu */
@@ -267,6 +273,84 @@ button{
         align-self: center;
     }
 }
+
+/* slider title */
+.slider__row{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 112px;
+}
+.slider__block{
+    width: 765px;
+    display: flex;
+    justify-content: space-between;
+}
+.slider__title{
+    width: 535px;
+}
+.btn__slider{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+/* laptop slider title */
+@media (max-width: 1024px) {
+      
+}
+
+/* tablet slider title */
+@media (max-width: 768px) {
+    .slider__title{
+        width: 80%;
+    }
+}
+
+/* mobile L slider title */
+@media (max-width: 426px) {
+    .slider__row{
+        justify-content: center;
+    }
+    .slider__block{
+        display: flex;
+        flex-direction: column;
+    }
+    .slider__title{
+        width: 100%;
+    }
+    .btn__slider{
+        margin-top: 70px;
+    }
+}
+
+/* slider */
+.slider__vision{
+    margin: 45px 0 0 11%;
+    overflow: hidden;
+}
+.slider__inner{
+    display: flex;
+}
+.slider__item{
+    margin-right: 20px;
+}
+
+/* mobile L slider */
+@media (max-width: 426px) {
+    .slider__vision{
+        margin: 25px 0 0 11%;
+    }
+}
+
+/* monile slider */
+@media (max-width: 321px) {
+    .slider__vision{
+        margin: 25px 0 0 2.5%;
+
+    }
+}
+
 
 
 
