@@ -89,7 +89,10 @@ h2{
     letter-spacing: -0.04em;
     margin: 0;
 }
-
+h3{
+    font-weight: 700;
+    font-size: 16px;
+}
 
 /* navigation menu */
 .nav__menu{
@@ -343,15 +346,141 @@ h2{
     }
 }
 
-/* monile slider */
+/* mobile slider */
 @media (max-width: 321px) {
     .slider__vision{
         margin: 25px 0 0 2.5%;
-
     }
 }
 
+/* Build your... */
+.services__title{
+    width: 41%;
+    margin-top: 128px;
+    margin-bottom: 40px;
+}
+.span__services{
+    font-family: "New York Extra";
+    font-size: 48px;
+    letter-spacing: -0.04em;
+}
 
+/* laptop services title*/
+@media (max-width: 1024px) {
+    .services__title{
+        width: 51%;
+    }
+}
+
+/* tablet services title*/
+@media (max-width: 768px) {
+    .services__title{
+        width: 61%;
+    }
+}
+
+/* mobile L services title*/
+@media (max-width: 426px) {
+    .services__title{
+        width: 61%;
+    }
+    .span__services{
+        font-family: "New York Extra";
+        font-size: 48px;
+        letter-spacing: -0.04em;
+        color: #FD665E;
+    }
+}
+
+/* services */
+.parent_services{
+    display: flex;
+    flex-direction: column;
+}
+.item__services{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 373px;
+    height: 121px;
+    margin-top: 40px;
+}
+.content__services p{
+    margin-top: 12px;
+    width: 305px;
+}
+
+/* та же кнопка, что и в начале, но зачем то с uppercase и другого размера */
+.btn__free__consultation__2{
+    width: 204px;
+    height: 56px;
+    margin: 20px 0 0 65px;
+}
+.text__transform{
+    text-transform: uppercase;
+}
+
+/* mobile L services */
+@media (max-width: 426px) {
+    .services__img{
+        width: 320px;
+    }
+    .item__services{
+        width: 100%;
+        height: 100%;
+    }
+    .item__services img{
+        display: none;
+    }
+    .content__services p{
+        width: 250px;
+    }
+    .btn__free__consultation__2{
+        margin: 20px 0 0 12%;
+    }
+}
+
+/* mobile services */
+@media (max-width: 375px) {
+    .btn__free__consultation__2{
+        margin: 20px 0 0 8%;
+    }
+}
+
+/* background html */
+.container__fluid{
+    background-color: #F9F9F9;
+    margin-top: 64px;
+}
+
+/* title comments */
+.title__comments{
+    width: 33%;
+    padding-top: 64px;
+}
+
+/* laptop title comments */
+@media (max-width: 1024px) {
+    .title__comments{
+        width: 50%;
+    }
+}
+
+/* tablet title comments */
+@media (max-width: 768px) {
+    .title__comments{
+        width: 70%;
+    }
+}
+
+/* mobile L title comments */
+@media (max-width: 426px) {
+    .title__comments{
+        width: 80%;
+    }
+}
+
+/* slider comments */
 
 
 
