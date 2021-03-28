@@ -549,6 +549,67 @@ h3{
     }
 }
 
+/* pre end */
+.pre__end{
+    display: flex;
+}
+.pre__end img{
+    width: 497px;
+}
+.pre__end__content{
+    width: 500px;
+    min-height: 250px;
+    margin-top: 250px;
+    margin-left: 100px;
+}
+.end__btn{
+    margin: 65px 0 0 0;
+}
+.pre__end__title span{
+    font-family: "New York Extra";
+    color: #FD665E; 
+}
+
+/* laptop pre end */
+@media (max-width: 1024px) {
+    .pre__end img{
+        width: 400px;
+    }
+    .pre__end__content{
+        margin-top: 180px;
+    }
+}
+
+/* tablet pre end */
+@media (max-width: 768px) {
+    .pre__end{
+        flex-direction: column;
+    }
+    .pre__end__content{
+        margin: 100px 0 0 0;
+        order: 1;
+    }
+    .end__btn{
+        margin: 65px 0 0 0px;
+    }
+    .pre__end img{
+        margin-top: 50px;
+        order: 2;
+    }
+}
+
+/* mobile L pre end */
+@media (max-width: 426px) {
+    .pre__end__content{
+        width: 270px;
+    }
+    .pre__end img{
+        width: 270px;
+    }
+    .end__btn{
+        margin: 65px 0 0 8%;
+    }
+}
 
 
 
