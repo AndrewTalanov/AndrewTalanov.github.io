@@ -678,6 +678,52 @@ hr{
     }
 }
 
+/* burger menu */
+.burger__menu{
+    display: none;
+    min-width: 100px;
+    min-height: 200px;
+    position: absolute;
+    right: 30px;
+    top: 80px;
+    background-color: white;
+}
+.burget__menu__tablet{
+    display: none;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.burger__menu__item{
+    list-style-type: none;
+    margin-bottom: 10px;
+}
+
+@media (min-width: 427px) {
+    .burget__menu__tablet{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+}
+
+/* burger menu mobile */
+.burger__menu__mobile{
+    display: none;
+}
+
+@media (max-width: 426px) {
+    .burger__menu{
+        right: 15px;
+    }
+    .burger__menu__mobile{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+}
 
 
 
