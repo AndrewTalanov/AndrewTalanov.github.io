@@ -132,8 +132,94 @@ h3{
     width: 100px;
     height: 48px;
 }
+
+/* btn burger menu */
 .btn__brg__menu{
     display: none;
+    box-shadow: none;
+    cursor: pointer;
+    width: 46px;
+    height: 46px;
+    border-radius: 0;
+    background-color: white;
+}
+.btn__brg__menu span{
+    display: block;
+    position: absolute;
+    background-color: white;
+    height: 3px;
+    width: 30px;
+    top: 49px;
+    right: 35px;
+}
+.btn__brg__menu span::before, .btn__brg__menu span::after {
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 30px;
+    content: "";
+    background-color: white;
+}
+.btn__brg__menu span::before {
+    top: -10px;
+}
+.btn__brg__menu span::after {
+    bottom: -10px;
+}
+.animation__menu {
+    background-color: #FD665E;
+}
+
+/* animation burger menu */
+.animation__menu span {
+    transition: background 0s .3s;
+}
+.animation__menu span::before, .animation__menu span::after {
+    transition-duration: .3s, .3s;
+    transition-delay: .3s, 0s;
+}
+.animation__menu span::before {
+    transition-property: top, transform;
+}
+.animation__menu span::after {
+    transition-property: bottom, transform;
+}
+
+/* is active */
+.animation__menu.is__active span {
+    background-color: #FD665E;
+}
+.animation__menu.is__active span::before {
+    top: 0;
+    transform: rotate(-45deg);
+}
+.animation__menu.is__active span::after {
+    bottom: 0;
+    transform: rotate(45deg);
+}
+.animation__menu.is__active span::before, .animation__menu.is__active span::after {
+    transition-delay: 0s, .3s;
+} 
+
+/* mobile L btn burger menu */
+@media (max-width: 426px) {
+    .btn__brg__menu span{
+        right: 23px;
+    }
+}
+
+/* mobile M btn burger menu */
+@media (max-width: 376px) {
+    .btn__brg__menu span{
+        right: 20.5px;
+    }
+}
+
+/* mobile btn burger menu */
+@media (max-width: 320px) {
+    .btn__brg__menu span{
+        right: 18.7px;
+    }
 }
 
 /* laptop nav menu */
@@ -161,7 +247,6 @@ h3{
     }
     .btn__brg__menu{
         display: block;
-        width: 25px;
     }
 }
 @media (max-width: 680px) {
@@ -679,7 +764,10 @@ hr{
 }
 
 /* burger menu */
-.burger__menu{
+.menu__active {
+    display: block;
+}
+.burger__menu {
     display: none;
     min-width: 100px;
     min-height: 200px;
@@ -688,18 +776,15 @@ hr{
     top: 80px;
     background-color: white;
 }
-.burget__menu__tablet{
+.burget__menu__tablet {
     display: none;
-    justify-content: center;
-    flex-direction: column;
-    align-items: flex-end;
 }
-.burger__menu__item{
+.burger__menu__item {
     list-style-type: none;
     margin-bottom: 10px;
 }
 
-@media (min-width: 427px) {
+@media (min-width: 426px) and (max-width: 768px) {
     .burget__menu__tablet{
         display: flex;
         justify-content: center;
