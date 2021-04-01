@@ -419,6 +419,7 @@ h3{
 }
 .slider__inner{
     display: flex;
+    transition: .5s all;
 }
 .slider__item{
     margin-right: 20px;
