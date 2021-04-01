@@ -70,17 +70,16 @@ window.onload = () => {
     
     const width = window.getComputedStyle(slidesWrapper).width;
 
-    console.log(width);
-
     slidesField.style.width = 100 * BD.length + "%";
 
+    console.log(slidesField.style.width);
     // btn (left right)
     const btnLeft = document.querySelector("[data-left]");
     const btnRight = document.querySelector("[data-right]");
     
     btnRight.addEventListener("click", () => {
 
-        if (offset == +width.slice(0, width.length - 2) ) {
+        if (offset >= +width.slice(0, width.length - 2) * (BD.length - 1) ) {
             offset = 0; 
         } else {
             offset += +width.slice(0, width.length - 2);
@@ -90,8 +89,8 @@ window.onload = () => {
     });
 
     btnLeft.addEventListener("click", () => {
-        if (offset == 0 ) {
-            offset = -width.slice(0, width.length - 2); 
+        if (offset <= 0 ) {
+            offset = +width.slice(0, width.length - 2) * (BD.length - 1); 
         } else {
             offset -= +width.slice(0, width.length - 2);
         }
