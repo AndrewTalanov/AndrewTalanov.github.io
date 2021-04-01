@@ -26,7 +26,7 @@ window.onload = () => {
 
     // -------------
 
-    //  Slider
+    //  Slider img
     const BD = [
         "slider1.png",
         "slider2.png",
@@ -40,7 +40,7 @@ window.onload = () => {
         "114.jpg",
     ]
 
-    class Loading {
+    class LoadingImg {
         constructor (img) {
             this.img = img
         }
@@ -58,10 +58,10 @@ window.onload = () => {
     }
     
     BD.forEach((item) => {
-        new Loading(item).load();
+        new LoadingImg(item).load();
     });
 
-    // Slider animation
+    // Slider img animation
 
     const slidesField = document.querySelector(".slider__inner");
     const slidesWrapper = document.querySelector(".slider__vision");
@@ -72,19 +72,9 @@ window.onload = () => {
 
     slidesField.style.width = 352 * BD.length + "px";
 
-
-    console.log(slidesField);
-    console.log(slidesWrapper);
-    const td = document.querySelector(".slider__item")
-    // console.log(td.clientWidth); дает отступ 
-    console.log();
-    
-
     // btn (left right)
     const btnLeft = document.querySelector("[data-left]");
     const btnRight = document.querySelector("[data-right]");
-    
-    // console.log(document.querySelector(".slider__item"));
 
     btnRight.addEventListener("click", () => {
 
@@ -99,6 +89,7 @@ window.onload = () => {
     });
 
     btnLeft.addEventListener("click", () => {
+
         if (offset <= 0 ) {
             offset += +width.slice(0, width.length - 2) / 2;
         } else {
@@ -108,6 +99,81 @@ window.onload = () => {
 
         slidesField.style.transform = `translateX(${offset}px)`;
     });
+
+    // Slider comments 
+
+    const BDc = [
+        {
+            comment: "1)We just wanted to thank you for this fantastic website! We are so grateful for being able to advertise our Petite cabin and receive feedback from people from all over the U.S. and even further.",
+            name: "Adam Morph",
+            profession: "CEO Alfatech"
+        },
+        {
+            comment: "2)We just wanted to thank you for this fantastic website! We are so grateful for being able to advertise our Petite cabin and receive feedback from people from all over the U.S. and even further.",
+            name: "Andrew Ya",
+            profession: "Da"
+        },
+        {
+            comment: "3)We just wanted to thank you for this fantastic website! We are so grateful for being able to advertise our Petite cabin and receive feedback from people from all over the U.S. and even further.",
+            name: "En Gre",
+            profession: "four"
+        }
+    ];
+
+    class LoadingComments {
+        constructor (comment, author, profession) {
+            this.comment = comment,
+            this.author = author,
+            this.profession = profession
+        }
+
+        load () {
+            const commentItem = document.createElement("div");
+            commentItem.classList.add(".parent__comment__slider" );
+            commentItem.innerHTML = `
+                <div class="item__comment__slider">
+                    <p>${this.comment}
+                    </p>
+                </div>
+                <div class="under__item">
+                    <div class="name__comment">
+                        <p><span class="name">${this.author}</span> — ${this.profession}</p>
+                    </div>
+                    <div class="btn__slider__comment">
+                        <img src="assets/icons/btn__slider.png" alt="btn" data-comL>
+                        <img src="assets/icons/btn__slider__right.png" alt="btn" data-comR>
+                    </div>
+                </div>
+            `;
+
+            document.querySelector(".block__comments").append(commentItem);
+        }
+    }
+
+    new LoadingComments(BDc[0].comment, BDc[0].name, BDc[0].profession).load();
+
+    let btnComRight = document.querySelector('[data-comR]');
+    const btnComLeft = document.querySelector('[data-comL]');
+
+    let i = 0;
+
+    btnComRight.addEventListener("click", () => {
+
+        i++;
+        if (i == BDc.length) {
+            i = 0;
+        }
+
+        new LoadingComments(BDc[i].comment, BDc[i].name, BDc[i].profession).load();
+        
+        btnComRight = document.querySelectorAll('[data-comR]');
+        btnComRight.forEach(item => {
+            item.setAttribute('data-comR', '');
+        });
+    });
+    
+
+
     
 
 

@@ -581,6 +581,7 @@ h3{
 .parent__comment__slider{
     display: flex;
     flex-direction: column;
+    transition: .5s all;
 }
 .item__comment__slider p{
     width: 765px;
