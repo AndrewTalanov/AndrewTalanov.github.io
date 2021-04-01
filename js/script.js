@@ -14,9 +14,11 @@ window.onload = () => {
         btnBurgerMenu.classList.toggle("is__active");
 
         if (btnBurgerMenu.matches(".is__active")) {
-            burgerMenu.style.display = "block";
+            burgerMenu.style.opacity = "1";
+            burgerMenu.style.visibility = "visible";
         } else {
-            burgerMenu.style.display = "none";
+            burgerMenu.style.opacity = "0";
+            burgerMenu.style.visibility = "hidden";
         }
         
 
