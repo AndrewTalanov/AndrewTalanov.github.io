@@ -422,7 +422,7 @@ h3{
     transition: .5s all;
 }
 .slider__item{
-    margin-right: 20px;
+    padding-right: 18px;
 }
 
 /* mobile L slider */

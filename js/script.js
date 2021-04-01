@@ -65,24 +65,34 @@ window.onload = () => {
 
     const slidesField = document.querySelector(".slider__inner");
     const slidesWrapper = document.querySelector(".slider__vision");
-
+    
     let offset = 0;
     
     const width = window.getComputedStyle(slidesWrapper).width;
 
-    slidesField.style.width = 100 * BD.length + "%";
+    slidesField.style.width = 352 * BD.length + "px";
 
-    console.log(slidesField.style.width);
+
+    console.log(slidesField);
+    console.log(slidesWrapper);
+    const td = document.querySelector(".slider__item")
+    // console.log(td.clientWidth); дает отступ 
+    console.log();
+    
+
     // btn (left right)
     const btnLeft = document.querySelector("[data-left]");
     const btnRight = document.querySelector("[data-right]");
     
+    // console.log(document.querySelector(".slider__item"));
+
     btnRight.addEventListener("click", () => {
 
-        if (offset >= +width.slice(0, width.length - 2) * (BD.length - 1) ) {
+        if (offset >= 325 * (BD.length - 1) ) {
             offset = 0; 
         } else {
-            offset += +width.slice(0, width.length - 2);
+            offset += +width.slice(0, width.length - 2) / 2;
+
         }
 
         slidesField.style.transform = `translateX(-${offset}px)`;
@@ -90,9 +100,10 @@ window.onload = () => {
 
     btnLeft.addEventListener("click", () => {
         if (offset <= 0 ) {
-            offset = +width.slice(0, width.length - 2) * (BD.length - 1); 
+            offset += +width.slice(0, width.length - 2) / 2;
         } else {
-            offset -= +width.slice(0, width.length - 2);
+            offset = -(325 * (BD.length - 1)); 
+            
         }
 
         slidesField.style.transform = `translateX(${offset}px)`;
