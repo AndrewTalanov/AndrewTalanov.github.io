@@ -26,6 +26,43 @@ window.onload = () => {
 
     // -------------
 
+    //  Slider
+    const BD = [
+        "slider1.png",
+        "slider2.png",
+        "slider3.png",
+        "slider1.png",
+        "slider2.png",
+        "slider3.png",
+    ]
+
+    class Loading {
+        constructor (img) {
+            this.img = img
+        }
+
+        load () {
+            const sliderItem = document.createElement('div');
+            sliderItem.classList.add("slider__item");
+            sliderItem.innerHTML = `
+                <img src="assets/images/${this.img}" alt="slider item">
+            `;
+
+            const sliderInner = document.querySelector('.slider__inner');
+            sliderInner.append(sliderItem);
+        }
+    }
+    
+    BD.forEach((item) => {
+        new Loading(item).load();
+    });
+
+
+
+
+
+    
+
     
 
 
