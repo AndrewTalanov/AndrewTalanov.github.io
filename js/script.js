@@ -33,11 +33,7 @@ window.onload = () => {
         "slider3.png",
         "slider1.png",
         "slider2.png",
-        "slider3.png",
-        "111.jpg",
-        "112.png",
-        "113.jpg",
-        "114.jpg",
+        "slider3.png"
     ]
 
     class LoadingImg {
@@ -128,28 +124,23 @@ window.onload = () => {
         }
 
         load () {
-            const commentItem = document.createElement("div");
-            commentItem.classList.add(".parent__comment__slider" );
-            commentItem.innerHTML = `
-                <div class="item__comment__slider">
-                    <p>${this.comment}
-                    </p>
-                </div>
-                <div class="under__item">
-                    <div class="name__comment">
-                        <p><span class="name">${this.author}</span> — ${this.profession}</p>
-                    </div>
-                    <div class="btn__slider__comment">
-                        <img src="assets/icons/btn__slider.png" alt="btn" data-comL>
-                        <img src="assets/icons/btn__slider__right.png" alt="btn" data-comR>
-                    </div>
-                </div>
+            const comment = document.querySelector(".item__comment__slider");
+            comment.innerHTML = `
+                <p>${this.comment}</p>
             `;
 
-            document.querySelector(".block__comments").append(commentItem);
+            const autor = document.querySelector(".name");
+            autor.innerHTML = `
+                ${this.author}
+            `;
+
+            const profession = document.querySelector(".profession");
+            profession.innerHTML = `
+                ${this.profession}
+            `;  
         }
     }
-
+        
     new LoadingComments(BDc[0].comment, BDc[0].name, BDc[0].profession).load();
 
     let btnComRight = document.querySelector('[data-comR]');
@@ -158,20 +149,20 @@ window.onload = () => {
     let i = 0;
 
     btnComRight.addEventListener("click", () => {
-
         i++;
-        if (i == BDc.length) {
+        if (i > BDc.length - 1) {
             i = 0;
         }
-
         new LoadingComments(BDc[i].comment, BDc[i].name, BDc[i].profession).load();
-        
-        btnComRight = document.querySelectorAll('[data-comR]');
-        btnComRight.forEach(item => {
-            item.setAttribute('data-comR', '');
-        });
     });
     
+    btnComLeft.addEventListener("click", () => {
+        i--
+        if (i < 0) {
+            i = BDc.length - 1;
+        }
+        new LoadingComments(BDc[i].comment, BDc[i].name, BDc[i].profession).load();
+    });
 
 
     
