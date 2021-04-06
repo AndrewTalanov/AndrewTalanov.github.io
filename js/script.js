@@ -77,8 +77,7 @@ window.onload = () => {
         if (offset >= 325 * (BD.length - 1) ) {
             offset = 0; 
         } else {
-            offset += +width.slice(0, width.length - 2) / 2;
-
+            offset += 325;
         }
 
         slidesField.style.transform = `translateX(-${offset}px)`;
@@ -86,11 +85,11 @@ window.onload = () => {
 
     btnLeft.addEventListener("click", () => {
 
-        if (offset <= 0 ) {
-            offset += +width.slice(0, width.length - 2) / 2;
+        if (offset >= 0 ) {
+            offset -= 325 * (BD.length - 1); 
         } else {
-            offset = -(325 * (BD.length - 1)); 
-            
+            offset += 325;
+
         }
 
         slidesField.style.transform = `translateX(${offset}px)`;
