@@ -809,13 +809,23 @@ hr{
 
 @media (max-width: 426px) {
     .burger__menu{
-        right: 15px;
+        right: 0;
+        width: 100%;
     }
     .burger__menu__mobile{
+        width: 100%;
         display: flex;
         justify-content: center;
         flex-direction: column;
-        align-items: flex-end;
+        align-items: center;
+    }
+    .burger__menu__item{
+        font-size: 30px;
+        margin: 15px 0;
+    }
+    .burger__menu__item .btn__sing__up{
+        font-size: 25px;
+        width: 200px;
     }
 }
 
