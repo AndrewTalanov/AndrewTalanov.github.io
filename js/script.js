@@ -1,6 +1,6 @@
 "use strict";
 
-window.onload = () => {
+window.addEventListener('DOMContentLoaded', () => {
 
     // Burger Menu
     
@@ -26,13 +26,14 @@ window.onload = () => {
 
     // -------------
 
-    //  Slider img
+    //  Slider 
     const BD = [
         "slider1.png",
         "slider2.png",
         "slider3.png",
         "slider1.png",
-        "slider2.png",
+        "slider3.png",
+        "slider1.png",
         "slider3.png"
     ]
 
@@ -57,43 +58,38 @@ window.onload = () => {
         new LoadingImg(item).load();
     });
 
-    // Slider img animation
-
-    const slidesField = document.querySelector(".slider__inner");
-    // const slidesWrapper = document.querySelector(".slider__vision");
-    
-    let offset = 0;
-    
-    // const width = window.getComputedStyle(slidesWrapper).width;
-
-    slidesField.style.width = 352 * BD.length + "px";
-
-    // btn (left right)
     const btnLeft = document.querySelector("[data-left]");
     const btnRight = document.querySelector("[data-right]");
+    const slidesField = document.querySelector(".slider__inner");
+    let offset = 0;
+    
+    slidesField.style.width = 323 * BD.length + "px";
+
+    // btn (left right) 
 
     btnRight.addEventListener("click", () => {
 
-        if (offset >= 325 * (BD.length - 1) ) {
+        if (offset == -( 323 * (BD.length - 1))) {
             offset = 0; 
         } else {
-            offset += 325;
-        }
-
-        slidesField.style.transform = `translateX(-${offset}px)`;
-    });
-
-    btnLeft.addEventListener("click", () => {
-
-        if (offset >= 0 ) {
-            offset -= 325 * (BD.length - 1); 
-        } else {
-            offset += 325;
-
+            offset -= 323;
         }
 
         slidesField.style.transform = `translateX(${offset}px)`;
     });
+
+    btnLeft.addEventListener("click", () => {
+
+        if (offset == 0 ) {
+            offset -= 323 * (BD.length - 1); 
+        } else {
+            offset += 323;
+        }
+
+        slidesField.style.transform = `translateX(${offset}px)`;
+    });
+
+
 
     // Slider comments 
 
@@ -174,4 +170,4 @@ window.onload = () => {
 
 
 
-}
+});

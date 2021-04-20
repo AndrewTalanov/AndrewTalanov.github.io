@@ -98,6 +98,10 @@ h3{
     font-weight: 700;
     font-size: 16px;
 }
+header, footer, main, .container__max-width{
+    max-width: 1440px;
+    margin: 0 auto;
+}
 @media (max-width: 320px) {
     html{
         overflow-x: hidden;
@@ -456,7 +460,11 @@ h3{
     transition: .5s all;
 }
 .slider__item{
+    width: 305px;
     padding-right: 18px;
+}
+.slider__items img{
+    width: 100%;
 }
 
 /* mobile L slider */
