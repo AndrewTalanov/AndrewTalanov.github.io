@@ -60,11 +60,11 @@ window.onload = () => {
     // Slider img animation
 
     const slidesField = document.querySelector(".slider__inner");
-    const slidesWrapper = document.querySelector(".slider__vision");
+    // const slidesWrapper = document.querySelector(".slider__vision");
     
     let offset = 0;
     
-    const width = window.getComputedStyle(slidesWrapper).width;
+    // const width = window.getComputedStyle(slidesWrapper).width;
 
     slidesField.style.width = 352 * BD.length + "px";
 

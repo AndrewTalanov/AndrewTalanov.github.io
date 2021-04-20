@@ -98,6 +98,11 @@ h3{
     font-weight: 700;
     font-size: 16px;
 }
+@media (max-width: 320px) {
+    html{
+        overflow-x: hidden;
+    }
+}
 
 /* navigation menu */
 .nav__menu{
@@ -113,6 +118,30 @@ h3{
     align-items: center;
     display: flex;
     justify-content: space-between;
+}
+
+/* menu item */
+.menu__item{
+    position: relative; 
+	line-height: 1;
+}
+.menu__item:after{
+    display: block;
+	position: absolute;
+    top: 20px;
+	left: 0; 
+	width: 0;
+	height: 2px; 
+	background-color: #FD665E;
+	content: "";
+	transition: .5s ease-out;
+    opacity: 85%;
+}
+.menu__item a:hover{
+    color: #FD665E;
+}
+.menu__item:hover:after{
+    width: 100%;
 }
 
 /* left part nav menu */
@@ -223,7 +252,7 @@ h3{
 /* mobile btn burger menu */
 @media (max-width: 320px) {
     .btn__brg__menu span{
-        right: 18.7px;
+        right: 17px;
     }
 }
 
@@ -438,9 +467,9 @@ h3{
 }
 
 /* mobile slider */
-@media (max-width: 321px) {
+@media (max-width: 320px) {
     .slider__vision{
-        margin: 25px 0 0 2.5%;
+        margin: 25px 0 0 0;
     }
 }
 
@@ -535,6 +564,9 @@ h3{
 @media (max-width: 375px) {
     .btn__free__consultation__2{
         margin: 20px 0 0 8%;
+    }
+    .services__img{
+        width: 303px;
     }
 }
 
