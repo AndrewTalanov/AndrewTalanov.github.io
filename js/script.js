@@ -65,11 +65,22 @@ window.addEventListener('DOMContentLoaded', () => {
     
     slidesField.style.width = 323 * BD.length + "px";
 
+    let n = 0;
+    function endSlide() {
+        if (screen.width >= 1440) {
+            return n = 4;
+        }
+        else if (screen.width >= 768 && screen.width < 1440) {
+            return n = 2;
+        }
+        else if (screen.width >= 320 && screen.width < 768) {
+            return n = 1;
+        }
+    }
     // btn (left right) 
 
     btnRight.addEventListener("click", () => {
-
-        if (offset == -( 323 * (BD.length - 1))) {
+        if (offset == -( 323 * (BD.length - endSlide(n)))) {
             offset = 0; 
         } else {
             offset -= 323;
@@ -79,9 +90,8 @@ window.addEventListener('DOMContentLoaded', () => {
     });
 
     btnLeft.addEventListener("click", () => {
-
         if (offset == 0 ) {
-            offset -= 323 * (BD.length - 1); 
+            offset -= 323 * (BD.length - endSlide(n)); 
         } else {
             offset += 323;
         }
