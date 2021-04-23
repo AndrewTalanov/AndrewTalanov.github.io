@@ -98,7 +98,7 @@ h3{
     font-weight: 700;
     font-size: 16px;
 }
-header, footer, main, .container__max-width{
+header, footer, .container__max-width{
     max-width: 1440px;
     margin: 0 auto;
 }
@@ -238,27 +238,31 @@ header, footer, main, .container__max-width{
 .animation__menu.is__active span::before, .animation__menu.is__active span::after {
     transition-delay: 0s, .3s;
 } 
-
+@media (max-width: 648px) {
+    .btn__brg__menu span{
+        right: 5%;
+    }
+}
 /* mobile L btn burger menu */
 @media (max-width: 426px) {
     .btn__brg__menu span{
-        right: 23px;
+        right: 5.3%;
     }
 }
 
 /* mobile M btn burger menu */
-@media (max-width: 376px) {
+/* @media (max-width: 376px) {
     .btn__brg__menu span{
         right: 20.5px;
     }
-}
+} */
 
 /* mobile btn burger menu */
-@media (max-width: 320px) {
+/* @media (max-width: 320px) {
     .btn__brg__menu span{
         right: 17px;
     }
-}
+} */
 
 /* laptop nav menu */
 @media (max-width: 1024px) {
@@ -278,7 +282,7 @@ header, footer, main, .container__max-width{
 /* tablet nav menu */
 @media (max-width: 768px) {
     .nav__item__col__left{
-        width: 65%;
+        width: 80%;
     }
     .nav__item__col__right{
         display: none;
@@ -291,15 +295,10 @@ header, footer, main, .container__max-width{
     .nav__item__col__left{
         width: 90%;
     }
-}
-
-/* mobile L nav menu */
-@media (max-width: 426px) {
     .nav__menu ul{
         display: none;
     }
 }
-
 
 /* main */
 .container{
@@ -547,7 +546,16 @@ header, footer, main, .container__max-width{
 .text__transform{
     text-transform: uppercase;
 }
-
+@media (max-width: 512px) {
+    body{
+        overflow-x: hidden;
+    }
+}
+@media (max-width: 472px) {
+    .services__img{
+        width: 320px;
+    }
+}
 /* mobile L services */
 @media (max-width: 426px) {
     .services__img{
@@ -624,6 +632,7 @@ header, footer, main, .container__max-width{
     align-items: flex-start;
     margin-top: 45px;
 }
+
 .parent__comment__slider{
     display: flex;
     flex-direction: column;
@@ -646,8 +655,11 @@ header, footer, main, .container__max-width{
 /* laptop slider comments */
 @media (max-width: 1024px) {
     .item__comment__slider p{
-        width: 700px;
+        width: 90%;
         font-size: 26px;
+    }
+    .block__comments{
+        width: 85%;
     }
 }
 
@@ -657,8 +669,21 @@ header, footer, main, .container__max-width{
         width: 500px;
         font-size: 26px;
     }
+    .background__comments .kov{
+        display: none;
+    }
 }
-
+@media (max-width: 666px) {
+    .block__comments {
+        width: 100%;
+    }
+}
+@media (max-width: 588px) {
+    .block__comments p{
+        font-size: 20px;
+        width: 80%;
+    }
+}
 /* mobile L slider comments */
 @media (max-width: 426px) {
     .item__comment__slider p{
@@ -701,6 +726,11 @@ header, footer, main, .container__max-width{
     font-family: "New York Extra";
     color: #FD665E; 
 }
+@media (max-width: 585px) {
+    .pre__end__title{
+        width: 50%;
+    }
+}
 
 /* laptop pre end */
 @media (max-width: 1024px) {
@@ -709,6 +739,7 @@ header, footer, main, .container__max-width{
     }
     .pre__end__content{
         margin-top: 180px;
+        margin-left: 40px;
     }
 }
 
@@ -742,7 +773,11 @@ header, footer, main, .container__max-width{
         margin: 65px 0 0 8%;
     }
 }
-
+@media (max-width: 846px) {
+    .rectangle{
+        width: 100%;
+    }
+}
 /* our partners */
 .our__partners__title{
     margin-top: 120px;
@@ -847,7 +882,10 @@ hr{
     display: none;
 }
 
-@media (max-width: 426px) {
+@media (max-width: 530px) {
+    .burget__menu__tablet{
+        display: none;
+    }
     .burger__menu{
         right: 0;
         width: 100%;
@@ -868,7 +906,6 @@ hr{
         width: 200px;
     }
 }
-
 
 
 
