@@ -263,7 +263,11 @@ header, footer, .container__max-width{
         right: 17px;
     }
 } */
-
+@media (max-width: 1178px) {
+    .nav__item__col__left{
+        width: 60%;
+    }
+}
 /* laptop nav menu */
 @media (max-width: 1024px) {
     .nav__item__col__left{
@@ -271,6 +275,11 @@ header, footer, .container__max-width{
     }
     .nav__item__col__right{
         width: 25%;
+    }
+}
+@media (max-width: 1178px) {
+    .nav__item__col__left{
+        width: 70%;
     }
 }
 @media (max-width: 900px) {
