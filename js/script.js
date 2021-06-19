@@ -21,7 +21,6 @@ window.addEventListener('DOMContentLoaded', () => {
             burgerMenu.style.visibility = "hidden";
         }
         
-
     });
 
     // -------------
@@ -80,6 +79,14 @@ window.addEventListener('DOMContentLoaded', () => {
     // btn (left right) 
 
     btnRight.addEventListener("click", () => {
+        clickRight();
+    });
+
+    btnLeft.addEventListener("click", () => {
+        clickLeft();
+    });
+
+    function clickRight() {
         if (offset == -( 323 * (BD.length - endSlide(n)))) {
             offset = 0; 
         } else {
@@ -87,9 +94,8 @@ window.addEventListener('DOMContentLoaded', () => {
         }
 
         slidesField.style.transform = `translateX(${offset}px)`;
-    });
-
-    btnLeft.addEventListener("click", () => {
+    }
+    function clickLeft() {
         if (offset == 0 ) {
             offset -= 323 * (BD.length - endSlide(n)); 
         } else {
@@ -97,8 +103,38 @@ window.addEventListener('DOMContentLoaded', () => {
         }
 
         slidesField.style.transform = `translateX(${offset}px)`;
-    });
+    }
 
+    // свайп слайдера
+    let xDown = 0;
+    
+    // Человек нажал на экран
+    slidesField.addEventListener('touchstart', touchStart, false);
+
+    // человек движет по экрану     
+    slidesField.addEventListener('touchmove', touchMove, false);
+
+    function touchStart(e) {
+        xDown = e.touches[0].clientX;
+    };
+
+    function touchMove(e) {
+        if (!xDown) {
+            return;
+        }
+
+        let xUp = e.touches[0].clientX;
+        
+        let xDiff = xDown - xUp;
+        
+        if ( xDiff > 0 ) {
+            clickRight();
+        } else {
+            clickLeft();
+        }                       
+        
+        xDown = 0;
+    };
 
 
     // Slider comments 
