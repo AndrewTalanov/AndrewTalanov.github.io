@@ -127,7 +127,7 @@ window.addEventListener('DOMContentLoaded', () => {
         
         let xDiff = xDown - xUp;
         
-        if ( xDiff > 0 ) {
+        if ( xDiff > 70 ) {
             clickRight();
         } else {
             clickLeft();
